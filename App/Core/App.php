@@ -14,14 +14,14 @@ class App
         $url = $this->urlProcess();
 
         //xu li controller
-        if (file_exists("./App/Controllers/" . ucfirst($url[0]) . "Controller.php")) {
+        if (file_exists(CONT.DS . ucfirst($url[0]) . "Controller.php")) {
             $this->controller = ucfirst($url[0]);
             unset($url[0]);
         }
 
         $this->controller = $this->controller . "Controller";
 
-        require_once("./App/Controllers/" . $this->controller . ".php");
+        require_once(CONT.DS . $this->controller . ".php");
 
         $this->controller = new $this->controller;
 

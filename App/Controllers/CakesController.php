@@ -2,37 +2,21 @@
 
 use App\Core\Controller;
 
-class HomeController extends Controller
+class CakesController extends Controller
 {
-    public $cakeModel;
-    public $categoryModel;
-
+    private $cakeModel;
 
     function __construct()
     {
         $this->cakeModel = $this->model('CakeModel');
-        $this->categoryModel = $this->model('CategoryModel');
     }
 
-    function Index()
-    {
-        //get all cake
-        $cakes = $this->cakeModel->all();
-        if (!$cakes) {
-            $cakes = [];
+    function index(){
+        $cake= $this->cakeModel->all();
+        if(!$cake){
+            $cake=[];
         }
-        $data['cakes'] = $cakes;
-
-        // echo '<pre>';
-        // print_r($data);
-        // echo '</pre>';
-
-        //get caketype
-        $caketypes = $this->categoryModel->all();
-        if (!$caketypes) {
-            $caketypes = [];
-        }
-        $data['caketypes'] = $caketypes;
+        $data['cakes']= $cake;
 
         //get num of cake
         $numCake = $this->cakeModel->count();
@@ -55,6 +39,18 @@ class HomeController extends Controller
         }
         $data['cakeOnPage']=$cakeOnPage;
 
-        $this->view("/home/index", $data);
+        $this->view("/cakes/index", $data);
     }
+
+    
+    function search()
+    {
+        $keyword = $_POST["keyword"];
+        $cakes = $this->cakeModel->getByKeyword($keyword);
+        $data['search'] = $keyword;
+        $data['cakes']= $cakes;
+
+        $this->view("/cakes/search", $data);
+    }
+
 }

@@ -6,8 +6,8 @@ class Controller
 {
     function model($model)
     {
-        if (file_exists("./App/Models/" . $model . ".php")) {
-            require_once("./App/Models/" . $model . ".php");
+        if (file_exists(MODEL . DS . $model . ".php")) {
+            require_once(MODEL . DS . $model . ".php");
             return new $model;
         }
     }
@@ -15,8 +15,8 @@ class Controller
 
     function view($view, $data = [])
     {
-        if (file_exists("./App/Views/" . $view . ".php")) {
-            require_once("./App/Views/" . $view . ".php");
+        if (file_exists(VIEW . DS . $view . ".php")) {
+            require_once(VIEW . DS . $view . ".php");
             return;
         } else {
             die("Not found view:" . $view);

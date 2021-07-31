@@ -12,12 +12,12 @@ defined('VIEW') ?:  define('VIEW', APP . DS . 'Views');
 defined('CONF') ?:  define('CONF', APP . DS . 'Configs');
 
 // database constant
-$database = require(CONF . DS . 'database.php');
+// $database = require(CONF . DS . 'database.php');
 
-defined('DB_HOSTNAME') ?:  define('DB_HOSTNAME', $database['db_hostname']);
-defined('DB_NAME') ?:  define('DB_NAME', $database['db_name']);
-defined('DB_USERNAME') ?:  define('DB_USERNAME', $database['db_username']);
-defined('DB_PASSWORD') ?:  define('DB_PASSWORD', $database['db_password']);
+// defined('DB_HOSTNAME') ?:  define('DB_HOSTNAME', $database['db_hostname']);
+// defined('DB_NAME') ?:  define('DB_NAME', $database['db_name']);
+// defined('DB_USERNAME') ?:  define('DB_USERNAME', $database['db_username']);
+// defined('DB_PASSWORD') ?:  define('DB_PASSWORD', $database['db_password']);
 
 // // route constant
 // $routes = require(CONF . DS . 'routes.php');
@@ -30,8 +30,8 @@ require_once(CORE . DS . "Controller.php");
 require_once(CORE . DS . "Database.php");
 
 //navigation constant
-defined('DOCUMENT_ROOT') ?:  define('DOCUMENT_ROOT', "http://" . $_SERVER['SERVER_NAME'] . ":8080/Geeks-Bakery");
-defined('PUBLIC_URL') ?:  define('PUBLIC_URL', "http://" . $_SERVER['SERVER_NAME'] . ":8080/Geeks-Bakery" . '/public');
+defined('DOCUMENT_ROOT') ?:  define('DOCUMENT_ROOT', "http://" . $_SERVER['SERVER_NAME'] . ":81/MVC");
+defined('PUBLIC_URL') ?:  define('PUBLIC_URL', "http://" . $_SERVER['SERVER_NAME'] . ":81/MVC" . '/public');
 defined('IMAGES_CAKES_URL') ?:  define('IMAGES_CAKES_URL', PUBLIC_URL . '/img/cakes');
 defined('IMAGES_URL') ?:  define('IMAGES_URL', PUBLIC_URL . '/img');
 defined('ICONS_URL') ?:  define('ICONS_URL', PUBLIC_URL . '/img/icons');
