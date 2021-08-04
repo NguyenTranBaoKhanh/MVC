@@ -36,7 +36,7 @@ class HomeController extends Controller
 
         //get num of cake
         $numCake = $this->cakeModel->count();
-        $data['numCake']= $numCake;
+        $data['numCake'] = $numCake;
 
         //get page show cake
         if (isset($_GET['page'])) {
@@ -44,16 +44,16 @@ class HomeController extends Controller
         } else {
             $page = 1;
         }
-        $data['page']=$page;
+        $data['page'] = $page;
 
-        
+
         //get cake limit
-        $limit=($page-1) * 8;
-        $cakeOnPage=$this->cakeModel->getCake($limit, 8);
-        if(!$cakeOnPage){
-            $cakeOnPage=[];
+        $limit = ($page - 1) * 8;
+        $cakeOnPage = $this->cakeModel->getCake($limit, 8);
+        if (!$cakeOnPage) {
+            $cakeOnPage = [];
         }
-        $data['cakeOnPage']=$cakeOnPage;
+        $data['cakeOnPage'] = $cakeOnPage;
 
         $this->view("/home/index", $data);
     }

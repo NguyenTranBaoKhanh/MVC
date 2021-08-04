@@ -12,7 +12,7 @@
           <img src="http://localhost:81/MVC/public/icon/search.png" alt="search" />
         </button>
 
-        <form action="<?= DOCUMENT_ROOT ?>/cakes/search" method="post">
+        <form action="<?= DOCUMENT_ROOT ?>/cakes/search" method="get">
           <input type="text" placeholder="search..." name="keyword" id="search" />
         </form>
 

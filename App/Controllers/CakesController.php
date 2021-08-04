@@ -45,7 +45,11 @@ class CakesController extends Controller
     
     function search()
     {
-        $keyword = $_POST["keyword"];
+        if(isset($_GET["keyword"])){
+            $keyword = $_GET["keyword"];
+        }else{
+            $keyword = "";
+        }
         $cakes = $this->cakeModel->getByKeyword($keyword);
         $data['search'] = $keyword;
         $data['cakes']= $cakes;

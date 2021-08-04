@@ -31,7 +31,7 @@
 
 
 
-    <p style="text-align: center; margin: 15px;">search for key word: <b><?= $data['search'] ?></b> </p>
+    <p style="text-align: center; margin: 15px;">Search for: <b><?= $data['search'] ?></b> </p>
     <div class="wrapper">
         <section class="container sweeties">
             <h3 class="title">Sweeties</h3>
@@ -49,13 +49,13 @@
                         </div>
                     <?php endforeach; ?>
                 <?php else: ?>
-                    <p>không tìm thấy</p>
+                    <p>Không tìm thấy</p>
 
                 <?php endif; ?>
 
             </div>
 
-            <div class="paging-numbers noselect">
+            <!-- <div class="paging-numbers noselect">
                 <img class="paging__left-arrow" src="http://localhost:81/MVC/public/icon/left-arrow.svg" alt="left-arrow" />
                 <div class="paging-number">1</div>
                 <div class="paging-number paging-number-active">2</div>
@@ -63,7 +63,7 @@
                 <div class="paging-number">4</div>
                 <div class="paging-number">5</div>
                 <img class="paging__right-arrow" src="http://localhost:81/MVC/public/icon/right-arrow.svg" alt="right-arrow" />
-            </div>
+            </div> -->
         </section>
     </div>
 

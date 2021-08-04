@@ -438,6 +438,14 @@
     opacity: 1;
 }
 
+.paging__disable{
+    opacity: 0.5;
+}
+.paging__disable:active{
+    opacity: 0.5;
+}
+
+
 @media only screen and (max-width: 768px) {
     .sweeties__items {
         display: grid;

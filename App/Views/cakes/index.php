@@ -33,7 +33,7 @@
 
     <div class="wrapper">
         <section class="container sweeties">
-            <h3 class="title">Sweeties</h3>
+            <h3 class="title">Cakes</h3>
             <div class="sweeties__items">
 
                 <?php foreach ($data['cakeOnPage'] as $index => $cake) : ?>
@@ -53,7 +53,9 @@
             </div>
 
             <div class="paging-numbers noselect">
-                <img class="paging__left-arrow" src="http://localhost:81/MVC/public/icon/left-arrow.svg" alt="left-arrow" />
+                <a <?= $data['page'] <= 1 ? 'onclick="event.preventDefault()"' : '' ?> href="<?= DOCUMENT_ROOT . "/home?page=" . ($data['page'] - 1) ?>">
+                    <img class="paging__left-arrow <?= $data['page'] <= 1 ? "paging__disable" : "" ?>" src="http://localhost:81/MVC/public/icon/left-arrow.svg" alt="left-arrow" />
+                </a>
                 <!-- <div class="paging-number">1</div>
                 <div class="paging-number paging-number-active">2</div>
                 <div class="paging-number">3</div>
@@ -61,13 +63,14 @@
                 <div class="paging-number">5</div> -->
                 <?php $num = ceil($data["numCake"] / 8); ?>
                 <?php for ($i = 1; $i <= $num; $i++) : ?>
-                    <a href="index.php?page=<?= $i ?>">
-                        <li class="paging-number"><?= $i ?></li>
+                    <a <?= $i == $data['page'] ? 'onclick="event.preventDefault()"' : '' ?> href="<?= DOCUMENT_ROOT . "/cakes?page=$i"  ?>">
+                        <li class="paging-number <?= $i == $data['page'] ? "paging-number-active" : ""  ?>"><?= $i ?></li>
                     </a>
                 <?php endfor; ?>
-                <img class="paging__right-arrow" src="http://localhost:81/MVC/public/icon/right-arrow.svg" alt="right-arrow" />
+                <a <?= $data['page'] == $num ? 'onclick="event.preventDefault()"' : '' ?> href="<?= DOCUMENT_ROOT . "/home?page=" . ($data['page'] + 1) ?>">
+                    <img class="paging__right-arrow <?= $data['page'] == $num ? "paging__disable" : "" ?>" src="http://localhost:81/MVC/public/icon/right-arrow.svg" alt="right-arrow" />
+                </a>
             </div>
-            <div> <b style="color: #f3455a;">Current page:</b> <b><?= $data['page'] ?></b> </div>
         </section>
     </div>
 
