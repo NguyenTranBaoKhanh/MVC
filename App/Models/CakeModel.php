@@ -76,6 +76,35 @@ class CakeModel extends Database
         } else {
             return false;
         }
+    }
 
+    //bánh theo loại
+    function getCakeOfType($id, $limit, $num){
+        $sql= $this->conn->prepare("select * from cakes where id_cake_type=? limit ?, ?");
+        $sql->bind_param("iii", $id, $limit, $num);
+        $sql->execute();
+
+        $result=$sql->get_result();
+
+        if ($result->num_rows > 0) {
+            return $result->fetch_all(MYSQLI_ASSOC);
+        } else {
+            return false;
+        }
+    }
+
+    //đếm bánh theo loại để phân trang
+    function countCakeOfType($id){
+        $sql= $this->conn->prepare("select * from cakes where id_cake_type=?");
+        $sql->bind_param("i", $id);
+        $sql->execute();
+
+        $result=$sql->get_result();
+
+        if ($result->num_rows > 0) {
+            return $result->num_rows;
+        } else {
+            return false;
+        }
     }
 }

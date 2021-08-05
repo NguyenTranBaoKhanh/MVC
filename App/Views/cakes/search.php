@@ -49,7 +49,7 @@
                         </div>
                     <?php endforeach; ?>
                 <?php else: ?>
-                    <p>Không tìm thấy</p>
+                    <p style="transform: translateX(180%);">Không tìm thấy</p>
 
                 <?php endif; ?>
 

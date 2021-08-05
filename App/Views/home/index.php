@@ -34,8 +34,8 @@
       <h3 class="category__title title">Experience Flavours</h3>
       <ul class="category__items">
         <?php foreach ($data['caketypes'] as $index => $caketype) : ?>
-          <a href="#/*">
-            <li class="category__item">
+          <a href="<?= DOCUMENT_ROOT."/cakes/categories?id=".($index+1)."&type=".$caketype['name'] ?>">
+            <li class="category__item ">
               <img class="category__item-image" src="<?= IMAGES_CATEGORY_URL ?>/<?= strtolower(str_replace(' ', '', $caketype['name'])) ?>.jfif" alt="cake" />
               <div class="category__item-name"><?= $caketype['name'] ?></div>
               <div class="category__item-description">
