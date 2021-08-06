@@ -16,6 +16,8 @@ class HomeController extends Controller
 
     function Index()
     {
+
+        // unset($_SESSION['user']);
         //get all cake
         $cakes = $this->cakeModel->all();
         if (!$cakes) {

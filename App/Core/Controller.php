@@ -16,7 +16,7 @@ class Controller
     function view($view, $data = [])
     {
         if (file_exists(VIEW . DS . $view . ".php")) {
-            require_once(VIEW . DS . $view . ".php");
+            require_once(VIEW . DS . "share/layout.php");
             return;
         } else {
             die("Not found view:" . $view);

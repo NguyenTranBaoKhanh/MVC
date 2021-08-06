@@ -23,19 +23,28 @@
           <span class="header__cart__count">10</span>
         </div>
 
-        <div class="header__user">
-          <div class="header__user__avatar noselect">
-            <img src="<?= IMAGES_URL ?>/user.jpg" alt="user" />
-            <div class="header__user__dropdown">
-              <ul>
-                <li><a href="#/">Profile</a></li>
-                <li><a href="#/">Setting</a></li>
-                <li><a href="#/">More</a></li>
-                <li><a href="#/">Logout</a></li>
-              </ul>
+        <?php if (isset($_SESSION['user'])) : ?>
+
+          <div class="header__user">
+            <div class="header__user__avatar noselect">
+              <img src="<?= PUBLIC_URL . "/uploads/avt/" . $_SESSION['user']['avatar'] ?>" alt="user" />
+              <div class="header__user__dropdown">
+                <ul>
+                  <li><a href="#/">Profile</a></li>
+                  <li><a href="#/">Setting</a></li>
+                  <li><a href="#/">More</a></li>
+                  <li><a href="<?= DOCUMENT_ROOT. "/account/signout" ?>">Logout</a></li>
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
+
+        <?php else : ?>
+
+          <a href="<?= DOCUMENT_ROOT ?>/account"><button class="btn btn--primary">Login</button></a>
+
+        <?php endif; ?>
+
         <div class="header__menu-mobile">
           <label for="">
             <img class="header__menu-mobile-icon" src="http://localhost:81/MVC/public/icon/menu-mobile.svg" alt="menu bar" />

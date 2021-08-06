@@ -89,6 +89,7 @@ a {
 }
 
 .btn {
+    cursor: pointer;
     padding: 8px 43px;
     border-radius: 15px;
 }
