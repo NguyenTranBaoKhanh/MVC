@@ -20,7 +20,7 @@
       <div class="header__info">
         <div class="header__cart noselect">
           <img src="http://localhost:81/MVC/public/icon/cart.svg" alt="cart" />
-          <span class="header__cart__count">10</span>
+          <span id="cartAmountId" class="header__cart__count">0</span>
         </div>
 
         <?php if (isset($_SESSION['user'])) : ?>

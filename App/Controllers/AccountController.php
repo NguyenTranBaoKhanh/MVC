@@ -88,6 +88,7 @@ class AccountController extends Controller
                 $this->view("/account/register", $data);
             }
         }
+
     }
 
     function signout()

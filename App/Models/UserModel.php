@@ -12,7 +12,7 @@ class UserModel extends Database
         if (isset($data)) {
             $email = $data['email'];
             $password = $data['password'];
-        }else{
+        } else {
             return "không có data";
         }
 
@@ -55,27 +55,30 @@ class UserModel extends Database
     }
     function register($data)
     {
-        $name = $data['name'];
-        $phone = $data['phone'];
-        $address = $data['address'];
-        $email = $data['email'];
-        $password = password_hash($data['password'], PASSWORD_DEFAULT);
-        $role = 1;
-        $avt = "user.png";
+        if (isset($data)) {
+            $name = $data['name'];
+            $phone = $data['phone'];
+            $address = $data['address'];
+            $email = $data['email'];
+            $password = password_hash($data['password'], PASSWORD_DEFAULT);
+            $role = 1;
+            $avt = "user.png";
 
-        $sql = $this->conn->prepare("insert into users(name, phone, address, email, password, role, avatar) value(?, ?, ?, ?, ?, ?, ?)");
-        $sql->bind_param("sssssis", $name, $phone, $address, $email, $password, $role, $avt);
-        $sql->execute();
+            $sql = $this->conn->prepare("insert into users(name, phone, address, email, password, role, avatar) value(?, ?, ?, ?, ?, ?, ?)");
+            $sql->bind_param("sssssis", $name, $phone, $address, $email, $password, $role, $avt);
+            $sql->execute();
 
-        //coi đã insert dô chưa, nếu dô thì affaced_rows > 1
-        $result = $sql->affected_rows;
+            //coi đã insert dô chưa, nếu dô thì affaced_rows > 1
+            $result = $sql->affected_rows;
 
 
-        if ($result < 1) {
-            return false;
-        } else {
-            return true;
+            if ($result < 1) {
+                return false;
+            } else {
+                return true;
+            }
         }
+        return false;
     }
 
     function isUserName($email)

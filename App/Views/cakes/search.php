@@ -4,10 +4,10 @@
 
 
 
-    <p style="text-align: center; margin: 15px;">Search for: <b><?= $data['search'] ?></b> </p>
+    <p style="text-align: center; margin: 15px;"> </p>
     <div class="wrapper">
         <section class="container sweeties">
-            <h3 class="title">Sweeties</h3>
+            <h3 class="title">Search for: <b><?= $data['search'] ?></b></h3>
             <div class="sweeties__items">
                 <?php if (!empty($data['cakes'])) : ?>
                     <?php foreach ($data['cakes'] as $index => $cake) : ?>
