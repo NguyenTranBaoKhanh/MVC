@@ -21,7 +21,7 @@
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    
+
     <style>
       body {
         background-color: #f3455a;
@@ -60,6 +60,13 @@
 
   <body>
 
+    <div id="toast">
+      <div id="img"><b>!</b></div>
+      <div id="desc">A notification message..</div>
+    </div>
+
+    <p hidden id="documentRoot"><?= DOCUMENT_ROOT ?></p>
+
     <?php require_once(VIEW . '/share/header.php'); ?>
 
     <?php require_once(VIEW .  $view . ".php") ?>
@@ -72,6 +79,7 @@
 
     <script src="<?= PUBLIC_URL ?>/js/app.js"></script>
     <script src="<?= PUBLIC_URL ?>/js/slider.js"></script>
+    <script src="<?= PUBLIC_URL ?>/js/cart.js"></script>
 
   </body>
 
