@@ -16,7 +16,7 @@
                                 <div class="sweeties__item-price"><?= $cakeOfType['price'] ?>đ</div>
                                 <div class="sweeties__item-original-price"><?= $cakeOfType['price'] ?>đ</div>
                             </div>
-                            <button class="btn btn--secondary">Add to cart +</button>
+                            <button onclick="addToCart(<?= isset($_SESSION['user']) ?  $_SESSION['user']['id'] : 0 ?>, <?= $cakeOfType['id'] ?>)" class="btn btn--secondary">Add to cart +</button>
                         </div>
                     <?php endforeach; ?>
                 <?php else : ?>

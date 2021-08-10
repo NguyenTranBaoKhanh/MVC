@@ -38,8 +38,6 @@ class CartModel extends Database
             $sql->bind_param("iii", $cakeId, $userId, $amount);
             $sql->execute();
 
-            // $result = $sql->get_result();
-
             if ($sql->error) {
                 $isSuccess = false;
             }
@@ -84,12 +82,6 @@ class CartModel extends Database
         $result = $sql->get_result();
 
         return $result->fetch_row()[0];
-
-        // if ($result->num_rows > 0) {
-        //     return $result;
-        // } else {
-        //     return false;
-        // }
     }
     //getAmount
 
