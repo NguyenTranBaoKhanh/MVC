@@ -25,7 +25,7 @@
         </div>
 
         <div class="paging-numbers noselect">
-            <a <?= $data['page'] <= 1 ? 'onclick="event.preventDefault()"' : '' ?> href="<?= DOCUMENT_ROOT . "/home?page=" . ($data['page'] - 1) ?>">
+            <a <?= $data['page'] <= 1 ? 'onclick="event.preventDefault()"' : '' ?> href="<?= DOCUMENT_ROOT . "/cakes?page=" . ($data['page'] - 1) ?>">
                 <img class="paging__left-arrow <?= $data['page'] <= 1 ? "paging__disable" : "" ?>" src="http://localhost:81/MVC/public/icon/left-arrow.svg" alt="left-arrow" />
             </a>
             <!-- <div class="paging-number">1</div>
@@ -39,7 +39,7 @@
                     <li class="paging-number <?= $i == $data['page'] ? "paging-number-active" : ""  ?>"><?= $i ?></li>
                 </a>
             <?php endfor; ?>
-            <a <?= $data['page'] == $num ? 'onclick="event.preventDefault()"' : '' ?> href="<?= DOCUMENT_ROOT . "/home?page=" . ($data['page'] + 1) ?>">
+            <a <?= $data['page'] == $num ? 'onclick="event.preventDefault()"' : '' ?> href="<?= DOCUMENT_ROOT . "/cakes?page=" . ($data['page'] + 1) ?>">
                 <img class="paging__right-arrow <?= $data['page'] == $num ? "paging__disable" : "" ?>" src="http://localhost:81/MVC/public/icon/right-arrow.svg" alt="right-arrow" />
             </a>
         </div>
