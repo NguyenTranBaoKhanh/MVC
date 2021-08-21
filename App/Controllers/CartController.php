@@ -26,8 +26,10 @@ class CartController extends Controller
     function amountInCart(){
         if(isset($_SESSION['user'])){
             $result=$this->cartModel->getAmount($_SESSION['user']['id']);
-        }
+            echo $result;
+        }else echo 0;
     }
+
     function removecart()
     {
     }
