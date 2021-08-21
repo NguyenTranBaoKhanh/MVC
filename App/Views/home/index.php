@@ -1,3 +1,5 @@
+asasdasdasdaasda
+
 <div class="container-fluid banner">
   <img src="<?= IMAGES_URL ?>/banner.png" alt="banner" />
 </div>
