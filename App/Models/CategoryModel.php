@@ -19,4 +19,16 @@ class CategoryModel extends Database
         }
     }
 
+    function store($data){
+
+    }
+
+    function delete($data){
+
+    }
+
+    function update($data){
+        
+    }
+
 }

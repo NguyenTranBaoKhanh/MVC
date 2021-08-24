@@ -97,4 +97,16 @@ class CartModel extends Database
         }
         return false;
     }
+
+    function store($data){
+
+    }
+
+    function delete($data){
+
+    }
+
+    function update($data){
+        
+    }
 }

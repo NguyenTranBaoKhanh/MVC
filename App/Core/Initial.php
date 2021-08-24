@@ -24,6 +24,8 @@ defined('CONF') ?:  define('CONF', APP . DS . 'Configs');
 // defined('DEFAULT_CONTROLLER') ?: define('DEFAULT_CONTROLLER', $routes['default_controller']);
 // defined('DEFAULT_ACTION') ?: define('DEFAULT_ACTION', $routes['default_action']);
 
+
+
 // load require file
 require_once(CORE . DS . "App.php");
 require_once(CORE . DS . "Controller.php");
@@ -36,3 +38,7 @@ defined('IMAGES_CAKES_URL') ?:  define('IMAGES_CAKES_URL', PUBLIC_URL . '/img/ca
 defined('IMAGES_URL') ?:  define('IMAGES_URL', PUBLIC_URL . '/img');
 defined('ICONS_URL') ?:  define('ICONS_URL', PUBLIC_URL . '/img/icons');
 defined('IMAGES_CATEGORY_URL') ?:  define('IMAGES_CATEGORY_URL', PUBLIC_URL . '/img/categories');
+
+//admind sidebar constant
+$adminSidebar = require(CORE . DS . 'admin_sidebar.php');
+defined('ADMIN_SIDEBAR') ?: define('ADMIN_SIDEBAR', $adminSidebar);

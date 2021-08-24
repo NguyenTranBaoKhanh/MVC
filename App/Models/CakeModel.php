@@ -107,4 +107,17 @@ class CakeModel extends Database
             return false;
         }
     }
+
+
+    function store($data){
+
+    }
+
+    function delete($data){
+
+    }
+
+    function update($data){
+        
+    }
 }
