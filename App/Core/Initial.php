@@ -11,6 +11,9 @@ defined('MODEL') ?:  define('MODEL', APP . DS . 'Models');
 defined('VIEW') ?:  define('VIEW', APP . DS . 'Views');
 defined('CONF') ?:  define('CONF', APP . DS . 'Configs');
 
+defined('PUBLIC_DIR') ?:  define('PUBLIC_DIR', ROOT . DS . 'public');
+defined('PUBLIC_DIR_CAKE_IMG') ?:  define('PUBLIC_DIR_CAKE_IMG', ROOT . DS . 'public' . DS . 'img' . DS . 'cakes');
+
 // database constant
 // $database = require(CONF . DS . 'database.php');
 
