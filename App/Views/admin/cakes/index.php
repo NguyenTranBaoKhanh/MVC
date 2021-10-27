@@ -51,8 +51,9 @@
                                         <td><img style="max-width: 100px;" class="img-thumbnail mx-auto d-block" src="<?= IMAGES_URL ?>/cakes/<?= $cake['image'] ?>" alt="cake"></td>
                                         <td>
                                             <div class=" text-center">
-                                                <a id="edit" href="<?= DOCUMENT_ROOT ?>/admin/cakes/edit/<?= $cake['id'] ?>" type="button" class="btn btn-primary mr-2">Edit</a>
-                                                <a id="delete" href="<?= DOCUMENT_ROOT ?>/admin/cakes/delete/<?= $cake['id'] ?>" type="button" class="btn btn-danger" >Delete</a>
+                                                <a id="edit" href="<?= DOCUMENT_ROOT ?>/admin/cakes/edit/<?= $cake['id'] ?>" ><button type="button" class="btn btn-primary">Edit</button></a>
+                                                <a id="delete" href="<?= DOCUMENT_ROOT ?>/admin/cakes/delete/<?= $cake['id'] ?>" ><button type="button" class="btn btn-danger">Delete</button></a>
+                                                
                                             </div>
                                         </td>
                                     </tr>
@@ -72,6 +73,7 @@
         <!-- /.row -->
     </div>
     <!-- /.container-fluid -->
+    
 </section>
 <!-- /.content -->
 
